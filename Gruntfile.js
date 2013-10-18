@@ -14,6 +14,24 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+		//deploy to aplication
+		
+		deploy: {
+		    liveservers: {
+		      options:{
+		        servers: [{
+		          host: '162.243.33.42',
+		          port: 22,
+		          username: 'root',
+		          password: 'admqazwsx25'
+		        }],
+		        cmds_before_deploy: [],
+		        cmds_after_deploy: [],
+		        deploy_path: '/var/www/donalista'
+		      }
+		    }
+		  },
+	
         // configurable paths
         yeoman: {
             app: 'app',
@@ -336,4 +354,7 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+	//deploy
+	grunt.loadNpmTasks('grunt-deploy');
 };
