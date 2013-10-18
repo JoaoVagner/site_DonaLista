@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 		          username: 'root',
 		          password: 'admqazwsx25'
 		        }],
-		        cmds_before_deploy: [],
+		        cmds_before_deploy: ["cd /var/www/donalista/; git pull"],
 		        cmds_after_deploy: [],
 		        deploy_path: '/var/www/donalista'
 		      }
